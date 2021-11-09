@@ -1,0 +1,28 @@
+kumuluzee:
+  name: basketball-stats
+  env:
+    name: dev
+  version: 1.0.0
+  server:
+    base-url: http://localhost:8086
+    http:
+      port: 8086
+  datasources:
+    - jndi-name: jdbc/statsDS
+      connection-url: jdbc:postgresql://pg-events.clvqrwayazxs.eu-central-1.rds.amazonaws.com/stats
+      username: postgres
+      password: postgres12
+  health:
+    checks:
+      data-source-health-check:
+        type: liveness
+        jndi-name: jdbc/statsDS
+  metrics:
+    web-instrumentation:
+      - name: stats-endpoint
+        url-pattern: /v1/stats/*
+  rest-client:
+    registrations:
+      - class: api
+        url: http://localhost:8086/v1
+        read-timeout: 5000

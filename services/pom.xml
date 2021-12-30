@@ -11,10 +11,12 @@
 
     <artifactId>services</artifactId>
 
+
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -41,6 +43,10 @@
             <version>${kumuluzee-rest.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.kumuluz.ee.metrics</groupId>
+            <artifactId>kumuluzee-metrics-core</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.json</groupId>
@@ -52,7 +58,20 @@
         <dependency>
             <groupId>si.fri.rsoteam</groupId>
             <artifactId>models</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>si.fri.rsoteam</groupId>
+            <artifactId>lib</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.microprofile.metrics</groupId>
+            <artifactId>microprofile-metrics-api</artifactId>
+            <version>2.3.3</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

@@ -1,6 +1,10 @@
 package si.fri.rsoteam.api.v1.resources;
 
+import si.fri.rsoteam.lib.dtos.StatsDto;
+import si.fri.rsoteam.services.beans.StatsBean;
+
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -23,39 +27,38 @@ public class StatsResource {
 
     private Logger log = Logger.getLogger(StatsResource.class.getName());
 
-//    @Inject
-//    private StatsBean statsBean;
+    @Inject
+    private StatsBean statsBean;
 
     @Context
     protected UriInfo uriInfo;
 
     @GET
-    public Response getObjects() {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+    public Response getStats() {
+        return Response.ok(statsBean.getAllStats()).build();
     }
 
     @GET
     @Path("/{objectId}")
-    public Response getObjectById(@PathParam("objectId") Integer id) {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+    public Response getStatsById(@PathParam("objectId") Integer id) {
+        return Response.ok(statsBean.getStats(id)).build();
     }
 
     @POST
-    public Response createObject(Object object) {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
-
+    public Response createStats(StatsDto statsDto) {
+        return Response.status(201).entity(statsBean.createStats(statsDto)).build();
     }
 
     @PUT
     @Path("{objectId}")
-    public Response putObjectById(@PathParam("objectId") Integer id,
-                                     Object object) {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+    public Response updateStats(@PathParam("objectId") Integer id, StatsDto eventDto) {
+        return Response.status(201).entity(statsBean.updateStats(eventDto, id)).build();
     }
 
     @DELETE
     @Path("{objectId}")
-    public Response deleteObject(@PathParam("objectId") Integer id) {
-        return Response.status(Response.Status.NOT_IMPLEMENTED).build();
+    public Response deleteEvent(@PathParam("objectId") Integer id) {
+        statsBean.deleteStats(id);
+        return Response.status(204).build();
     }
 }

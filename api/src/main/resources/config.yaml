@@ -26,3 +26,6 @@ kumuluzee:
       - class: api
         url: http://localhost:8086/v1
         read-timeout: 5000
+rest-config:
+  maintenance-mode: false
+  api-token: htn12kss3

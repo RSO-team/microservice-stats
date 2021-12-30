@@ -1,4 +1,4 @@
-package si.fri.rsoteam.models.converters;
+package si.fri.rsoteam.converters;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

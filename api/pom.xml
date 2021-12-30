@@ -11,11 +11,11 @@
 
     <artifactId>api</artifactId>
 
+
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.kumuluz.ee</groupId>
@@ -25,6 +25,19 @@
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-servlet-jetty</artifactId>
         </dependency>
+        <!--    <dependency>-->
+        <!--      <groupId>com.kumuluz.ee.config</groupId>-->
+        <!--      <artifactId>kumuluzee-config-consul</artifactId>-->
+        <!--    </dependency>-->
+        <dependency>
+            <groupId>com.kumuluz.ee.health</groupId>
+            <artifactId>kumuluzee-health</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kumuluz.ee.config</groupId>
+            <artifactId>kumuluzee-config-mp</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>si.fri.rsoteam</groupId>

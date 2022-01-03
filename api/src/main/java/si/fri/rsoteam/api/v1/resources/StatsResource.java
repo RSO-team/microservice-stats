@@ -4,6 +4,7 @@ import com.kumuluz.ee.logs.LogManager;
 import com.kumuluz.ee.logs.Logger;
 import com.kumuluz.ee.logs.cdi.Log;
 import com.kumuluz.ee.logs.cdi.LogParams;
+import org.eclipse.microprofile.metrics.annotation.Counted;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.headers.Header;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -54,6 +55,7 @@ public class StatsResource {
             )
     })
     @Log(LogParams.METRICS)
+    @Counted(name = "showed_stats_counter")
     public Response getStats() {
         return Response.ok(statsBean.getAllStats()).build();
     }
@@ -83,6 +85,7 @@ public class StatsResource {
             )
     })
     @Log(LogParams.METRICS)
+    @Counted(name = "created_stats_counter")
     public Response createStats(StatsDto statsDto) {
         return Response.status(201).entity(statsBean.createStats(statsDto)).build();
     }

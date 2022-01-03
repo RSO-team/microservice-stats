@@ -25,10 +25,10 @@
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-servlet-jetty</artifactId>
         </dependency>
-        <!--    <dependency>-->
-        <!--      <groupId>com.kumuluz.ee.config</groupId>-->
-        <!--      <artifactId>kumuluzee-config-consul</artifactId>-->
-        <!--    </dependency>-->
+        <dependency>
+            <groupId>com.kumuluz.ee.config</groupId>
+            <artifactId>kumuluzee-config-etcd</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.kumuluz.ee.health</groupId>
             <artifactId>kumuluzee-health</artifactId>
@@ -62,6 +62,10 @@
         <dependency>
             <groupId>com.kumuluz.ee.metrics</groupId>
             <artifactId>kumuluzee-metrics-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.kumuluz.ee.discovery</groupId>
+            <artifactId>kumuluzee-discovery-etcd</artifactId>
         </dependency>
     </dependencies>
 

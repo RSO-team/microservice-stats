@@ -24,14 +24,14 @@ kumuluzee:
         url-pattern: /v1/stats/*
   discovery:
     etcd:
-      hosts: http://localhost:2379
+      hosts: http://etcd:2379
     ttl: 30
     ping-interval: 5
   config:
     start-retry-delay-ms: 500
     max-retry-delay-ms: 900000
     etcd:
-      hosts: http://localhost:2379
+      hosts: http://etcd:2379
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">

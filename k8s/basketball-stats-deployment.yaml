@@ -30,7 +30,7 @@ spec:
                   name: pg-pass-stats
                   key: KUMULUZEE_DATASOURCES0_PASSWORD
           ports:
-            - containerPort: 8081
+            - containerPort: 8086
               name: server
               protocol: TCP
           livenessProbe:

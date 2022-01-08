@@ -9,6 +9,7 @@ import si.fri.rsoteam.services.mappers.StatsMapper;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,6 +64,19 @@ public class StatsBean {
             this.commitTx();
         }
     }
+
+    public void deleteStatsForUser(Integer userId) {
+        beginTx();
+        try {
+            em.createNamedQuery("Stats.deleteForUser", TypedQuery.class)
+                    .setParameter("userId", userId)
+                    .executeUpdate();
+            commitTx();
+        } catch (Exception e) {
+            rollbackTx();
+        }
+    }
+
 
     private void beginTx() {
         if (!em.getTransaction().isActive()) {

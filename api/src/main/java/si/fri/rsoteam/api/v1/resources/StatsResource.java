@@ -120,4 +120,20 @@ public class StatsResource {
         statsBean.deleteStats(id);
         return Response.status(204).build();
     }
+
+    @DELETE
+    @Path("user/{userId}")
+    @Operation(summary = "Delete stats for specific user.", description = "Delete stats for specific user.")
+    @APIResponses({
+            @APIResponse(
+                    description = "Successfully deleted stats.",
+                    responseCode = "204",
+                    content = @Content(schema = @Schema(name = "none"))
+            )
+    })
+    @Log(LogParams.METRICS)
+    public Response deleteForUser(@PathParam("userId") Integer userId) {
+        statsBean.deleteStatsForUser(userId);
+        return Response.status(204).build();
+    }
 }

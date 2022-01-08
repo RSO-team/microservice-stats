@@ -9,13 +9,13 @@ import java.util.List;
 @Entity
 @Table(name = "stats")
 @NamedQuery(name = "Stats.getAll", query = "SELECT e from StatsEntity e")
+@NamedQuery(name = "Stats.deleteForUser", query = "DELETE FROM StatsEntity se WHERE se.userId = :userId")
 public class StatsEntity implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private Integer id;
-
 
     @Size(min = 3, max = 20)
     private String category;

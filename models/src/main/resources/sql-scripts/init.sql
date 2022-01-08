@@ -1,6 +1,12 @@
 insert into stats (category,userId,value) VALUES ('playtime_minutes',1,20);
 insert into stats (category,userId,value) VALUES ('playtime_minutes',2,20);
 insert into stats (category,userId,value) VALUES ('playtime_minutes',3,20);
+insert into stats (category,userId,value) VALUES ('playtime_minutes',3,14);
+insert into stats (category,userId,value) VALUES ('playtime_minutes',3,23);
+insert into stats (category,userId,value) VALUES ('playtime_minutes',3,11);
+insert into stats (category,userId,value) VALUES ('playtime_minutes',3,24);
+insert into stats (category,userId,value) VALUES ('playtime_minutes',3,45);
+insert into stats (category,userId,value) VALUES ('playtime_minutes',3,44);
 insert into stats (category,userId,value) VALUES ('playtime_minutes',4,20);
 insert into stats (category,userId,value) VALUES ('playtime_minutes',5,20);
 insert into stats (category,userId,value) VALUES ('playtime_minutes',6,20);

@@ -52,7 +52,7 @@ kind: Service
 metadata:
   name: basketball-stats
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 8086
       protocol: TCP

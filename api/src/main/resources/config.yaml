@@ -24,6 +24,7 @@ kumuluzee:
       - name: stats-endpoint
         url-pattern: /v1/stats/*
   discovery:
+    cluster: 1
     etcd:
       hosts: http://localhost:2379
     ttl: 30
